@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+// Task 1: Declares an array of 10 integers
+public class Task1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[10]; // Array of 10 integers
+
+        // Taking input from user
+        System.out.println("Enter 10 integers:");
+        for (int i = 0; i < 10; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // 2. Displays all elements of the array
+        System.out.println("\nAll elements of array:");
+        for (int i = 0; i < 10; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+        // 3. Displays the elements in reverse order
+        System.out.println("\n\nElements in reverse order:");
+        for (int i = 9; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+        sc.close();
+    }
+}
