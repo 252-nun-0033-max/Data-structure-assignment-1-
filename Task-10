@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Task10 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr1 = new int[5];
+        int[] arr2 = new int[5];
+        int[] merged = new int[10];
+
+        // 1. Input for both arrays
+        System.out.println("Enter 5 integers for first array (ascending):");
+        for (int i = 0; i < 5; i++) arr1[i] = sc.nextInt();
+        System.out.println("Enter 5 integers for second array (ascending):");
+        for (int i = 0; i < 5; i++) arr2[i] = sc.nextInt();
+
+        // 2. Merge into third array
+        for (int i = 0; i < 5; i++) merged[i] = arr1[i];
+        for (int i = 0; i < 5; i++) merged[i + 5] = arr2[i];
+
+        // 3. Display merged array
+        System.out.println("Merged array:");
+        for (int n : merged) System.out.print(n + " ");
+
+        // 4. Find largest in merged array
+        int max = merged[0];
+        for (int i = 1; i < 10; i++) {
+            if (merged[i] > max) max = merged[i];
+        }
+        System.out.println("\nLargest element in merged array: " + max);
+        sc.close();
+    }
+}
