@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Task11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr1 = new int[5];
+        int[] arr2 = new int[5];
+        int[] merged = new int[10];
+
+        System.out.println("Enter 5 sorted integers for first array:");
+        for (int i = 0; i < 5; i++) arr1[i] = sc.nextInt();
+        System.out.println("Enter 5 sorted integers for second array:");
+        for (int i = 0; i < 5; i++) arr2[i] = sc.nextInt();
+
+        // Merge without using sorting - two pointer technique
+        int i = 0, j = 0, k = 0;
+        while (i < 5 && j < 5) {
+            if (arr1[i] <= arr2[j]) {
+                merged[k++] = arr1[i++]; // take from first array
+            } else {
+                merged[k++] = arr2[j++]; // take from second array
+            }
+        }
+        // Copy remaining elements
+        while (i < 5) merged[k++] = arr1[i++];
+        while (j < 5) merged[k++] = arr2[j++];
+
+        System.out.println("Sorted merged array:");
+        for (int n : merged) System.out.print(n + " ");
+        sc.close();
+    }
+}
